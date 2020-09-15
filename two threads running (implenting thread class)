@@ -1,0 +1,33 @@
+class learningCollections
+{
+	public static void main(String args[])
+	{
+		MyThread1 t1=new MyThread1();
+		t1.start();
+		
+		MyThread2 t2=new MyThread2();
+		t2.start();
+	}
+}
+class MyThread1 extends Thread{
+	 public void run() 
+	{
+		 for(int i=0;i<1000000;i++)
+		System.out.println("ONE-----------------");
+	}
+	
+}
+
+class MyThread2 extends Thread{
+	 public void run() 
+	{
+		 for(int i=0;i<1000000;i++)
+		System.out.println("two");
+	}
+	
+}
+
+
+
+output------------------------------------------------------------------
+mix of (one--------------------------   and two)
