@@ -1,0 +1,40 @@
+class learningCollections
+{
+	public static void main(String args[])
+	{
+		Thread t1=new Thread(new MyThread1());
+		t1.start();
+		
+		
+		MyThread2 t2=new MyThread2();
+		t2.start();
+	}
+}
+class MyThread1 implements Runnable{
+
+	@Override
+	public void run() {
+		for(int i=0;i<1000000;i++)
+		{
+		System.out.println("one------------------------  " +Thread.currentThread().getId());
+		 //System.out.print();
+		}
+		}
+		
+	}
+	
+
+class MyThread2 extends Thread{
+	 public void run() 
+	{
+		for(int i=0;i<1000000;i++)
+		{
+		System.out.println("two  " +Thread.currentThread().getId());
+		 //System.out.print();
+		}
+		}
+	}
+	
+
+output
+mixed both one--- and two
